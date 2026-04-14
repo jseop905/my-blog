@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+/* ─── Pretendard Local Font ─── */
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Pretendard-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/Pretendard-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/Pretendard-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/Pretendard-Bold.woff2") format("woff2");
+}
+
+/* ─── Design Tokens ─── */
+
+@theme {
+  /* Typography */
+  --font-headline: var(--font-newsreader), serif;
+  --font-body: "Pretendard", sans-serif;
+  --font-label: "Pretendard", sans-serif;
+
+  /* Primary */
+  --color-primary: #532aa8;
+  --color-primary-container: #6b46c1;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #e1d2ff;
+  --color-primary-fixed: #e9ddff;
+  --color-primary-fixed-dim: #d0bcff;
+  --color-inverse-primary: #d0bcff;
+
+  /* Secondary */
+  --color-secondary: #645787;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #d7c6fe;
+  --color-on-secondary-container: #5e5080;
+  --color-secondary-fixed: #e9ddff;
+  --color-secondary-fixed-dim: #cfbef5;
+
+  /* Tertiary (Accent — 제한적 사용) */
+  --color-tertiary: #6b5f00;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #bfac2e;
+  --color-on-tertiary-container: #494000;
+  --color-tertiary-fixed: #fae361;
+  --color-tertiary-fixed-dim: #dcc748;
+
+  /* Surface */
+  --color-background: #f9f9ff;
+  --color-on-background: #121c2c;
+  --color-surface: #f9f9ff;
+  --color-on-surface: #121c2c;
+  --color-surface-variant: #d9e3f9;
+  --color-on-surface-variant: #494453;
+  --color-surface-dim: #d0daf0;
+  --color-surface-bright: #f9f9ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f0f3ff;
+  --color-surface-container: #e7eeff;
+  --color-surface-container-high: #dee8ff;
+  --color-surface-container-highest: #d9e3f9;
+  --color-surface-tint: #6b46c1;
+  --color-inverse-surface: #273141;
+  --color-inverse-on-surface: #ebf1ff;
+
+  /* Outline */
+  --color-outline: #7a7484;
+  --color-outline-variant: #cbc3d5;
+
+  /* Error */
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  /* Border Radius */
+  --radius: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+}
+
+/* ─── Focus Styles ─── */
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-lg);
+}

@@ -1,0 +1,38 @@
+---
+title: "클린 아키텍처의 재해석"
+description: "유지보수 가능한 시스템 설계를 위한 계층화 전략을 살펴봅니다."
+date: "2024-05-24"
+categories:
+  - "Architecture"
+  - "DevOps"
+tags:
+  - "clean-architecture"
+  - "system-design"
+thumbnail: "/images/posts/clean-architecture.jpg"
+pinned: true
+published: true
+---
+
+# 클린 아키텍처의 재해석
+
+소프트웨어 시스템의 복잡성을 관리하기 위한 계층화 전략은 오랜 역사를 가지고 있습니다.
+
+## 핵심 원칙
+
+의존성은 항상 안쪽으로 향해야 합니다. 외부 계층은 내부 계층에 의존하지만, 내부 계층은 외부에 대해 알지 못합니다.
+
+```typescript
+// 도메인 계층 — 외부 의존성 없음
+interface UserRepository {
+  findById(id: string): Promise<User | null>;
+}
+```
+
+## 계층 구조
+
+1. **엔터티** — 핵심 비즈니스 규칙
+2. **유스케이스** — 애플리케이션 비즈니스 규칙
+3. **인터페이스 어댑터** — 외부 시스템과의 변환
+4. **프레임워크와 드라이버** — 세부 구현
+
+이 접근 방식은 테스트 가능성과 유연성을 동시에 확보할 수 있게 해줍니다.
